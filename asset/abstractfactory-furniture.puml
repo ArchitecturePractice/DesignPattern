@@ -1,0 +1,114 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface FurnitureFactory {
++Chair createChair()
++CoffeeTable createCoffeeTable()
++Sofa createSofa()
+}
+
+FurnitureFactory <- Client
+
+class Client {
+-FurnitureFactory furnitureFactory
++Client(FurnitureFactory furnitureFactory)
++void process()
+}
+
+interface Chair {
++boolean hasArms()
++boolean hasLegs()
+}
+interface CoffeeTable {
++boolean isGlass()
++boolean hasLegs()
+}
+interface Sofa {
++boolean hasArms()
++boolean hasLegs()
+}
+
+FurnitureFactory <|.. ArtDecoFurnitureFactory
+FurnitureFactory <|.. ModernFurnitureFactory
+FurnitureFactory <|.. VictorianFurnitureFactory
+
+class ArtDecoFurnitureFactory {
++Chair createChair()
++CoffeeTable createCoffeeTable()
++Sofa createSofa()
+}
+class ModernFurnitureFactory {
++Chair createChair()
++CoffeeTable createCoffeeTable()
++Sofa createSofa()
+}
+class VictorianFurnitureFactory {
++Chair createChair()
++CoffeeTable createCoffeeTable()
++Sofa createSofa()
+}
+
+ArtDecoFurnitureFactory ....> ArtDecoChair
+ArtDecoFurnitureFactory ....> ArtDecoCoffeeTable
+ArtDecoFurnitureFactory ....> ArtDecoSofa
+
+ModernFurnitureFactory ....> ModernChair
+ModernFurnitureFactory ....> ModernCoffeeTable
+ModernFurnitureFactory ....> ModernSofa
+
+VictorianFurnitureFactory ....> VictorianChair
+VictorianFurnitureFactory ....> VictorianCoffeeTable
+VictorianFurnitureFactory ....> VictorianSofa
+
+Chair <|.. ArtDecoChair
+Chair <|.. ModernChair
+Chair <|.. VictorianChair
+
+class ArtDecoChair {
++boolean hasArms()
++boolean hasLegs()
+}
+class ModernChair {
++boolean hasArms()
++boolean hasLegs()
+}
+class VictorianChair {
++boolean hasArms()
++boolean hasLegs()
+}
+
+CoffeeTable <|.. ArtDecoCoffeeTable
+CoffeeTable <|.. ModernCoffeeTable
+CoffeeTable <|.. VictorianCoffeeTable
+
+class ArtDecoCoffeeTable {
++boolean isGlass()
++boolean hasLegs()
+}
+class ModernCoffeeTable {
++boolean isGlass()
++boolean hasLegs()
+}
+class VictorianCoffeeTable {
++boolean isGlass()
++boolean hasLegs()
+}
+
+Sofa <|.. ArtDecoSofa
+Sofa <|.. ModernSofa
+Sofa <|.. VictorianSofa
+
+class ArtDecoSofa {
++boolean hasArms()
++boolean hasLegs()
+}
+class ModernSofa {
++boolean hasArms()
++boolean hasLegs()
+}
+class VictorianSofa {
++boolean hasArms()
++boolean hasLegs()
+}
+
+@enduml
