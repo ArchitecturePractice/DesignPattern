@@ -1,0 +1,49 @@
+@startuml
+
+class Client {
+    
+}
+
+class Director {
+    - builder: Builder
+    + makeSUV(builder)
+    + makeSportsCar(builder)
+}
+
+interface Builder {
+    + reset()
+    + setSeats(number)
+    + setEngine(engine)
+    + setTripComputer()
+    + setGPS()
+}
+
+class CarBuilder {
+    - car: Car
+    + reset()
+    + setSeats(number)
+    + setEngine(engine)
+    + setTripComputer()
+    + setGPS()
+    + getResult(): Car
+}
+
+class CarManualBuilder {
+    - manual: Manual
+    + reset()
+    + setSeats(number)
+    + setEngine(engine)
+    + setTripComputer()
+    + setGPS()
+    + getResult(): Manual
+}
+
+Client --> Director
+Director o--> Builder
+Builder <|-- CarBuilder
+Builder <|-- CarManualBuilder
+
+CarBuilder --> Car
+CarManualBuilder --> Manual
+
+@enduml
