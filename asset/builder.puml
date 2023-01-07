@@ -1,0 +1,47 @@
+@startuml
+
+class Client {
+    
+}
+
+class Director {
+    - builder: Builder
+    + Director(builder)
+    + changeBuilder(builder)
+    + make(type)
+}
+
+interface Builder {
+    + reset()
+    + buildStepA()
+    + buildStepB()
+    + buildStepC()
+}
+
+class ConcreteBuilder1 {
+    - result: Product1
+    + reset()
+    + buildStepA()
+    + buildStepB()
+    + buildStepC()
+    + getResult(): Product1
+}
+
+class ConcreteBuilder2 {
+    - result: Product2
+    + reset()
+    + buildStepA()
+    + buildStepB()
+    + buildStepC()
+    + getResult(): Product2
+}
+
+Client --> Director
+Director o--> Builder
+Builder <|-- ConcreteBuilder1
+Builder <|-- ConcreteBuilder2
+
+ConcreteBuilder1 --> Product1
+ConcreteBuilder2 --> Product2
+
+@enduml
