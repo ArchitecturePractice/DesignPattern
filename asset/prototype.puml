@@ -1,0 +1,25 @@
+@startuml
+
+interface Prototype {
+    +clone() : void
+}
+
+class ConcretePrototypeA {
+    +clone() : void
+}
+
+class ConcretePrototypeB {
+    +clone() : void
+}
+
+class Client {
+
+}
+
+ProtoType <|-- ConcretePrototypeA
+ProtoType <|-- ConcretePrototypeB
+
+Client --> ProtoType
+
+@enduml
+
