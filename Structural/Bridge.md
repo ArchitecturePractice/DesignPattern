@@ -8,11 +8,11 @@
 
 **USB Charger**
 
-![](study/DesignPattern/asset/bridge/bridge-usb-charger.png)
+![](../asset/bridge/bridge-usb-charger.png)
 
 **Adapter Charger**
 
-![](study/DesignPattern/asset/bridge/bridge-adapter-charger.png)
+![](..//asset/bridge/bridge-adapter-charger.png)
 
 -- --
 
@@ -27,7 +27,7 @@
 
 ### 시나리오
 
-![](study/DesignPattern/asset/bridge/bridge-scenario.png)
+![](../asset/bridge/bridge-scenario.png)
 
 그림 상으로는 `원`, `사각형` 의 `Shape` 가 존재한다
 
@@ -88,7 +88,7 @@
 
 ### 브릿지 패턴이 적용 된 예시
 
-![](study/DesignPattern/asset/bridge/bridge-uml.png)
+![](../asset/bridge/bridge-uml.png)
 [예시 코드](https://github.com/meeingjae/software-design/tree/master/src/main/java/com/software/design/bridge/store)
 
 잠깐 !
@@ -98,7 +98,7 @@ Spring에서도 사용할 수 있어요 ! ([예시 코드](https://github.com/me
 
 ### Device 예시
 
-![](study/DesignPattern/asset/bridge/bridge-guru-example.png)
+![](../asset/bridge/bridge-guru-example.png)
 [예시 코드](https://github.com/meeingjae/software-design/tree/master/src/main/java/com/software/design/bridge/device)
 
 -- --
