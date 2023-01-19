@@ -98,24 +98,14 @@ public class Client {
 
 ```
 
-### Peg 예제
+### Pseudocode
 
 ![Structure of the Adapter pattern example](https://refactoring.guru/images/patterns/diagrams/adapter/example.png?id=9d2b6857ce256f2c669383ce4df3d0aa)
 
 ```
-public class RoundPeg {
-
-    private int radius;
-
-    public RoundPeg(int radius) {
-
-        this.radius = radius;
-    }
-
-    public int getRadius() {
-
-        return radius;
-    }
+public interface RoundPeg {
+    
+    public int getRadius();
 }
 ```
 
@@ -134,7 +124,7 @@ public class SquarePeg {
 ```
 
 ```
-public class SquarePegAdapter extends RoundPeg{
+public class SquarePegAdapter implements RoundPeg{
 
     SquarePeg squarePeg;
 
