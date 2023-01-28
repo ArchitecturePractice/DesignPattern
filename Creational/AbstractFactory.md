@@ -1,4 +1,4 @@
-# 👻 추상 팩토리 패턴 (Abstract Factory)
+# 👷 추상 팩토리 패턴 (Abstract Factory)
 
 * factory에 대한 추상화(interface)
 * 관련 객체들의 모음(product family)을 생성
