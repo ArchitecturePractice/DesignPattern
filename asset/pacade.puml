@@ -1,0 +1,66 @@
+@startuml
+
+top to bottom direction
+
+class Facade {
+
+    +interface()
+}
+
+package Subsystem_A {
+
+    class Facade_A {
+
+        +method_A()
+    }
+}
+
+package Subsystem_B {
+
+    class Facade_B {
+
+        +method_B()
+    }
+
+    package Nested_Subsystem_BB {
+
+        class Facade_BB {
+
+            +method_BB()
+        }
+    }
+}
+
+package Subsystem_C {
+
+    class Facade_C {
+
+        +method_C()
+    }
+
+    package Nested_Subsystem_CC_1 {
+
+        class Facade_CC_1 {
+
+            +method_CC_1()
+        }
+    }
+
+    package Nested_Subsystem_CC_2 {
+
+        class Facade_CC_2 {
+
+            +method_CC_2()
+        }
+    }
+}
+
+Facade +-- Facade_A
+Facade +-- Facade_B
+Facade +-- Facade_C
+Facade_B +-- Facade_BB
+Facade_C +-- Facade_CC_1
+Facade_C +-- Facade_CC_2
+
+@enduml
+
